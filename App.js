@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import { Text, Button } from 'galio-framework';
+
+// the geolocations (cities) to be displayed
+[geolocations, setGeolocationss] = useState([]);
 
 export default function App() {
   return (

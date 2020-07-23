@@ -4,10 +4,12 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Text, Button } from 'galio-framework';
 
-// the geolocations (cities) to be displayed
-[geolocations, setGeolocationss] = useState([]);
 
 export default function App() {
+  
+  // the geolocations (cities) to be displayed
+  [geolocations, setGeolocationss] = useState([]);
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -21,7 +23,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ecf1f3',
     alignItems: 'center',
     justifyContent: 'center',
   },

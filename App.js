@@ -8,7 +8,7 @@ import { Text, Button } from 'galio-framework';
 export default function App() {
   
   // the geolocations (cities) to be displayed
-  [geolocations, setGeolocationss] = useState([]);
+  [geolocations, setGeolocations] = useState([]);
 
   return (
     <View style={styles.container}>

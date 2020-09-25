@@ -1,12 +1,11 @@
 import 'react-native-gesture-handler';
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { SafeAreaView, View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-
-import { Text, Button } from 'galio-framework';
-
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import tailwind from 'tailwind-rn';
+
 
 const Stack = createStackNavigator();
 
@@ -17,11 +16,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <StatusBar style="auto" />
       <Stack.Navigator>
         <Stack.Screen
           name='Home'
           component={HomeScreen}
-
         />
         <Stack.Screen 
           name='Search'
@@ -38,41 +37,37 @@ export default function App() {
 };
 
 const HomeScreen = ({navigation}) => (
-  <View style={styles.container}>
-    <StatusBar style="auto" />
-    <Text h1>CityPop Native</Text>
-    <Button round 
-      size="large" 
-      color="#f4b400" 
-      onPress={() => { navigation.navigate('Search', { type: 'city', setGeolocations: setGeolocations }) }}
-    >City</Button>
-    <Button round 
-      size="large" 
-      color="#4285f4" 
-      onPress={() => { navigation.navigate('Search', { type: 'country', setGeolocations: setGeolocations }) }}
-    >Country</Button>
-  </View>
+  <SafeAreaView style={tailwind('h-full')}>
+    <View style={tailwind('pt-12 items-center')}>
+      <View style={tailwind('bg-blue-200 px-3 py-1 rounded-full')}>
+        <Text style={tailwind('text-blue-800 font-semibold')}>
+          CityPop Native
+          </Text>
+      </View>
+    </View>
+  </SafeAreaView>
 );
 
 const SearchScreen = () => (
-  <View style={styles.container}>
-    <StatusBar style='auto' />
-    <Text>Search screen</Text>
-  </View>
+  <SafeAreaView style={tailwind('h-full')}>
+    <View style={tailwind('pt-12 items-center')}>
+      <View style={tailwind('bg-blue-200 px-3 py-1 rounded-full')}>
+        <Text style={tailwind('text-blue-800 font-semibold')}>
+          CityPop Native
+      </Text>
+      </View>
+    </View>
+  </SafeAreaView>
 );
 
 const CityScreen = () => (
-  <View style={styles.container}>
-    <StatusBar style='auto' />
-    <Text>City screen</Text>
-  </View>
+  <SafeAreaView style={tailwind('h-full')}>
+    <View style={tailwind('pt-12 items-center')}>
+      <View style={tailwind('bg-blue-200 px-3 py-1 rounded-full')}>
+        <Text style={tailwind('text-blue-800 font-semibold')}>
+          CityPop Native
+      </Text>
+      </View>
+    </View>
+  </SafeAreaView>
 )
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'snow',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
